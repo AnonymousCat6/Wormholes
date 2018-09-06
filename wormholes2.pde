@@ -1,3 +1,4 @@
+int gone;
 int direction;
 boolean bullet;
 boolean wait;
@@ -14,6 +15,7 @@ void setup(){
 ellipse(x,y,30,30);
 background(0);
 bullet=false;
+gone =1;
 }
 
 void draw(){
@@ -24,48 +26,49 @@ if(wait){
   ellipse(x,y,30,30);
   wait=false;
 }
-if(bullet && bulletx<width && bulletx>15){
-  if(direction==1){
-  bulletx=bulletx+10;
+if(gone==1){
   background(0);
-  ellipse(bulletx,bullety,20,10);
   ellipse(x,y,30,30);
-  }
-  else if(direction==2){
-  bulletx=bulletx-10;
-  background(0);
-  ellipse(bulletx,bullety,20,10);
-  ellipse(x,y,30,30); 
-  }
 }
 else{
   background(0);
-  ellipse(x,y,30,30);
+}
+if(bullet && bulletx<width && bulletx>15){
+  if(direction==1){
+  bulletx=bulletx+10;
+  ellipse(bulletx,bullety,20,10);
+  }
+  else if(direction==2){
+  bulletx=bulletx-10;
+  ellipse(bulletx,bullety,20,10);
+  }
 }
 }
 void keyPressed(){
   switch(key){
     case('d'):
     x=x+10;
-    background(0);
-    ellipse(x,y,30,30);
     direction=1;
     break;
     case('a'):
     x=x-10;
-    background(0);
-    ellipse(x,y,30,30);
     direction=2;
     break;
     case('w'):
     y=y-50;
-    background(0);
-    ellipse(x,y,30,30);
     wait=true;
     break;
     case('q'):
     bulletx=x;
     bullety=y;
     bullet=true;
+    break;
+    case('g'):
+    if(gone==1){
+      gone=2;
+    }
+    else{
+      gone=1;
+    }
   }
 }
