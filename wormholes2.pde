@@ -56,6 +56,8 @@ void keyPressed(){
     break;
     case('w'):
     y=y-50;
+    background(0);
+    ellipse(x,y,30,30);
     wait=true;
     break;
     case('q'):
