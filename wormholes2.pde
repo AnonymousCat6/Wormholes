@@ -1,3 +1,4 @@
+int bigj;
 int wfix;
 int gone;
 int direction;
@@ -18,12 +19,21 @@ background(0);
 bullet=false;
 gone =1;
 wfix=0;
+bigj=0;
 }
 
 void draw(){
-if(wait){
+if(wait==true && bigj==0){
   delay(500);
   y=y+50;
+  background(0);
+  ellipse(x,y,30,30);
+  wait=false;
+  wfix=0;
+}
+if(wait && bigj==1){
+  delay(500);
+  y=y+100;
   background(0);
   ellipse(x,y,30,30);
   wait=false;
@@ -63,6 +73,7 @@ void keyPressed(){
     y=y-50;
     background(0);
     ellipse(x,y,30,30);
+    bigj=0;
     wait=true;
     }
     break;
@@ -94,6 +105,16 @@ void keyPressed(){
     case('A'):
     x=x-40;
     direction=2;
+    break;
+    case('W'):
+    if(wfix==0){
+    wfix=1;
+    y=y-100;
+    background(0);
+    ellipse(x,y,30,30);
+    bigj=1;
+    wait=true;
+    }
     break;
   }
 }
