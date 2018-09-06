@@ -72,5 +72,13 @@ void keyPressed(){
     else{
       gone=1;
     }
+    break;
+    case('r'):
+    x=15;
+    y=height-15;
+    background(0);
+    ellipse(x,y,30,30);
+    gone=1;
+    bulletx=width;
   }
 }
