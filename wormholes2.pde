@@ -86,5 +86,14 @@ void keyPressed(){
     ellipse(x,y,30,30);
     gone=1;
     bulletx=width;
+    break;
+    case('D'):
+    x=x+40;
+    direction=1;
+    break;
+    case('A'):
+    x=x-40;
+    direction=2;
+    break;
   }
 }
