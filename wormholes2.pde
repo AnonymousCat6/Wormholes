@@ -1,3 +1,4 @@
+int wfix;
 int gone;
 int direction;
 boolean bullet;
@@ -16,6 +17,7 @@ ellipse(x,y,30,30);
 background(0);
 bullet=false;
 gone =1;
+wfix=0;
 }
 
 void draw(){
@@ -25,6 +27,7 @@ if(wait){
   background(0);
   ellipse(x,y,30,30);
   wait=false;
+  wfix=0;
 }
 if(gone==1){
   background(0);
@@ -55,10 +58,13 @@ void keyPressed(){
     direction=2;
     break;
     case('w'):
+    if(wfix==0){
+    wfix=1;
     y=y-50;
     background(0);
     ellipse(x,y,30,30);
     wait=true;
+    }
     break;
     case('q'):
     bulletx=x;
