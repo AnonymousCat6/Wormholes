@@ -20,6 +20,7 @@ void setup(){
   println("Q=shoot");
   println("G=Gone and Back/invisibility");
   println("Capital letters make you go farther, and W makes you jump higher");
+  ellipse(x,y, 50, 50);
 ellipse(x,y,30,30);
 background(0);
 bullet=false;
@@ -30,27 +31,33 @@ bigj=0;
 
 void draw(){
 if(wait==true && bigj==0){
+  ellipse(15,height-15, 50, 50);
   delay(500);
   y=y+50;
   background(0);
   ellipse(x,y,30,30);
+  ellipse(15,height-15, 50, 50);
   wait=false;
   wfix=0;
 }
 if(wait && bigj==1){
+  ellipse(15,height-15, 50, 50);
   delay(500);
   y=y+100;
   background(0);
   ellipse(x,y,30,30);
+  ellipse(15,height-15, 50, 50);
   wait=false;
   wfix=0;
 }
 if(gone==1){
   background(0);
   ellipse(x,y,30,30);
+  ellipse(15,height-15, 50, 50);
 }
 else{
   background(0);
+  ellipse(15,height-15, 50, 50);
 }
 if(bullet && bulletx<width && bulletx>15){
   if(direction==1){
@@ -60,6 +67,10 @@ if(bullet && bulletx<width && bulletx>15){
   else if(direction==2){
   bulletx=bulletx-10;
   ellipse(bulletx,bullety,20,10);
+  }
+  else{
+    background(0);
+    ellipse(15,height-15, 50, 50);
   }
 }
 }
@@ -79,6 +90,7 @@ void keyPressed(){
     y=y-50;
     background(0);
     ellipse(x,y,30,30);
+    ellipse(15,height-15, 50, 50);
     bigj=0;
     wait=true;
     }
@@ -118,6 +130,7 @@ void keyPressed(){
     y=y-100;
     background(0);
     ellipse(x,y,30,30);
+    ellipse(15,height-15, 50, 50);
     bigj=1;
     wait=true;
     }
