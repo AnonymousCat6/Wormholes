@@ -14,6 +14,12 @@ x=15;
 y=height-15;
 }
 void setup(){
+  print("d=right");
+  println("a=left");
+  println("SpaceBar=jumo");
+  println("Q=shoot");
+  println("G=Gone and Back/invisibility");
+  println("Capital letters make you go farther, and W makes you jump higher");
 ellipse(x,y,30,30);
 background(0);
 bullet=false;
@@ -67,7 +73,7 @@ void keyPressed(){
     x=x-10;
     direction=2;
     break;
-    case('w'):
+    case(' '):
     if(wfix==0){
     wfix=1;
     y=y-50;
@@ -106,7 +112,7 @@ void keyPressed(){
     x=x-40;
     direction=2;
     break;
-    case('W'):
+    case('w'):
     if(wfix==0){
     wfix=1;
     y=y-100;
